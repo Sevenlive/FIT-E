@@ -14,3 +14,12 @@ services:
     ports:
       - 8443:8443
     restart: unless-stopped
+  FIT-E:
+    image: oven/bun
+    container_name: FIT-E
+    volumes:
+      - ./:/home/bun/app
+    ports:
+      - 3000:3000
+    entrypoint: bun run index.ts
+    restart: unless-stopped
